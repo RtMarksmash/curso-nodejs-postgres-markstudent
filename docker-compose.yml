@@ -9,4 +9,14 @@ services:
       - POSTGRES_USER=mark
       - POSTGRES_PASSWORD=admin1234
     ports:
-      -5432:5432
+      - 5432:5432
+    volumes: 
+      - ./postgres_data:/var/lib/postgreslq/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=adminmark@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=mark
+    ports:
+      - 5050:80
