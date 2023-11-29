@@ -2,7 +2,7 @@ const { Client } = require('pg');
 
 
 
-async function getConnect() {
+async function getConnection() {
     const cliente = new Client({
         host: 'localhost',
         port: '5432',
@@ -17,4 +17,4 @@ async function getConnect() {
 }
 
 
-module.exports = getConnect;
+module.exports = getConnection;
